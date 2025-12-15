@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FPL – Top 10 Players by Points This Gameweek</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- NEW: Tabs -->
+    <nav class="tabs" aria-label="FPL views">
+      <button
+        class="tab-button tab-button-active"
+        id="tabTop10GW"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        aria-controls="gwTabPanel"
+      >
+        Top 10 – Points
+      </button>
+      <button
+        class="tab-button"
+        id="tabTop10xG"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="xgTabPanel"
+      >
+        Top 10 – xG
+      </button>
+	  
+	  <button
+        class="tab-button"
+        id="tabTop10xA"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="xaTabPanel"
+      >
+        Top 10 – xA
+      </button>
+	  
+    </nav>
+
+    <!-- TAB PANEL 1: Your existing GW Top 10 view -->
+    <section
+      id="gwTabPanel"
+      class="tab-panel"
+      role="tabpanel"
+      aria-labelledby="tabTop10GW"
+    >
+      <header>
+        <h1>Top 10 Players by Points This Gameweek</h1>
+        <div class="subtitle">
+          Top 10 Players by Points This Gameweek, using the official FPL API.
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Data auto-detected from live Gameweek
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="refreshBtn" class="btn">
+          <span class="btn-icon">🔄</span>
+          Refresh Top 10 Points
+        </button>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-left">
+          <div id="gwInfo" class="badge">
+            <span class="badge-dot"></span>
+            <span id="gwText">Detecting current Gameweek…</span>
+          </div>
+          <div id="updatedAt" style="font-size: 0.8rem; opacity: 0.85;">
+            Last updated: <span id="updatedTime">–</span>
+          </div>
+        </div>
+        <div id="statusMessage" class="error"></div>
+      </div>
+
+      <div class="card">
+        <div class="list-header">
+          <div>#</div>
+          <div>Photo</div>
+          <div>Player</div>
+          <div>Club</div>
+          <div class="header-cell-right">Position</div>
+          <div class="header-cell-right">GW Pts</div>
+        </div>
+        <div id="playersList" class="players-list">
+          <div class="empty-state">
+            <span id="loadingIndicator" class="loading">
+              <span class="spinner"></span>
+              Fetching FPL data…
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB PANEL 2: New Top 10 xG view -->
+    <section
+      id="xgTabPanel"
+      class="tab-panel tab-panel-hidden"
+      role="tabpanel"
+      aria-labelledby="tabTop10xG"
+    >
+      <header>
+        <h1>Top 10 Players by xG This Gameweek</h1>
+        <div class="subtitle">
+         Top 10 Players by xG This Gameweek, using the official FPL API.
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Data auto-detected from live Gameweek
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="refreshXgBtn" class="btn">
+          <span class="btn-icon">🔄</span>
+          Refresh Top 10 xG
+        </button>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-left">
+          <div class="badge">
+            <span class="badge-dot"></span>
+			<span id="gwxgText">Detecting current Gameweek…</span>
+          </div>
+          <div id="xgUpdatedAt" style="font-size: 0.8rem; opacity: 0.85;">
+            Last updated: <span id="xgUpdatedTime">–</span>
+          </div>
+        </div>
+        <div id="xgStatusMessage" class="error"></div>
+      </div>
+
+      <div class="card">
+        <div class="list-header">
+          <div>#</div>
+          <div>Photo</div>
+          <div>Player</div>
+          <div>Club</div>
+          <div class="header-cell-right">Position</div>
+          <div class="header-cell-right">GW xG</div>
+        </div>
+        <div id="xgPlayersList" class="players-list">
+          <div class="empty-state">
+            <span class="loading" id="xgLoadingIndicator" style="display: none;">
+              <span class="spinner"></span>
+              Fetching xG data…
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	<!-- TAB PANEL 3: New Top 10 xA view -->
+    <section
+      id="xaTabPanel"
+      class="tab-panel tab-panel-hidden"
+      role="tabpanel"
+      aria-labelledby="tabTop10xA"
+    >
+      <header>
+        <h1>Top 10 Players by xA This Gameweek</h1>
+        <div class="subtitle">
+         Top 10 Players by xa This Gameweek, using the official FPL API.
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Data auto-detected from live Gameweek
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="refreshXaBtn" class="btn">
+          <span class="btn-icon">🔄</span>
+          Refresh Top 10 xA
+        </button>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-left">
+          <div class="badge">
+            <span class="badge-dot"></span>
+			<span id="gwxaText">Detecting current Gameweek…</span>
+          </div>
+          <div id="xaUpdatedAt" style="font-size: 0.8rem; opacity: 0.85;">
+            Last updated: <span id="xaUpdatedTime">–</span>
+          </div>
+        </div>
+        <div id="xaStatusMessage" class="error"></div>
+      </div>
+
+      <div class="card">
+        <div class="list-header">
+          <div>#</div>
+          <div>Photo</div>
+          <div>Player</div>
+          <div>Club</div>
+          <div class="header-cell-right">Position</div>
+          <div class="header-cell-right">GW xA</div>
+        </div>
+        <div id="xaPlayersList" class="players-list">
+          <div class="empty-state">
+            <span class="loading" id="xaLoadingIndicator" style="display: none;">
+              <span class="spinner"></span>
+              Fetching xA data…
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
