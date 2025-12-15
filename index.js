@@ -1,3 +1,6 @@
+// Your backend base URL on Render
+const BACKEND_BASE = 'https://project1-backend-o71f.onrender.com';
+
 const ELEMENT_TYPES = {
   1: "GK",
   2: "DEF",
@@ -467,7 +470,7 @@ async function fetchTop10ForCurrentGW() {
 
   try {
     // 1) Get bootstrap-static for players + teams + events via your Node proxy
-    const bootstrapRes = await fetch("https://fantasy.premierleague.com/api/bootstrap-static/", {
+    const bootstrapRes = await fetch(`${BACKEND_BASE}/api/data`, {
       credentials: "omit",
     });
     if (!bootstrapRes.ok) {
@@ -495,7 +498,7 @@ async function fetchTop10ForCurrentGW() {
     gwTextEl.textContent = `Gameweek ${currentEvent.id} – ${currentEvent.name}`;
 
     // 3) Get live stats for that GW
-    const liveRes = await fetch(`https://fantasy.premierleague.com/api/event/${currentGW}/live/`, {
+    const liveRes = await fetch(`${BACKEND_BASE}/api/live/${currentGW}`, {
       credentials: "omit",
     });
     if (!liveRes.ok) {
@@ -576,7 +579,7 @@ async function fetchTop10xGForCurrentGW() {
 
   try {
     // 1) Get bootstrap-static for players + teams + events via your Node proxy
-    const bootstrapRes = await fetch("https://fantasy.premierleague.com/api/bootstrap-static/", {
+    const bootstrapRes = await fetch(`${BACKEND_BASE}/api/data`, {
       credentials: "omit",
     });
     if (!bootstrapRes.ok) {
@@ -604,7 +607,7 @@ async function fetchTop10xGForCurrentGW() {
     gwxgTextEl.textContent = `Gameweek ${currentEvent.id} – ${currentEvent.name}`;
 
     // 3) Get live stats for that GW
-    const liveRes = await fetch(`https://fantasy.premierleague.com/api/event/${currentGW}/live/`, {
+    const liveRes = await fetch(`${BACKEND_BASE}/api/live/${currentGW}`, {
       credentials: "omit",
     });
     if (!liveRes.ok) {
@@ -687,7 +690,7 @@ async function fetchTop10xAForCurrentGW() {
 
   try {
     // 1) Get bootstrap-static for players + teams + events via your Node proxy
-    const bootstrapRes = await fetch("https://fantasy.premierleague.com/api/bootstrap-static/", {
+    const bootstrapRes = await fetch(`${BACKEND_BASE}/api/data`, {
       credentials: "omit",
     });
     if (!bootstrapRes.ok) {
@@ -715,7 +718,7 @@ async function fetchTop10xAForCurrentGW() {
     gwxaTextEl.textContent = `Gameweek ${currentEvent.id} – ${currentEvent.name}`;
 
     // 3) Get live stats for that GW
-    const liveRes = await fetch(`https://fantasy.premierleague.com/api/event/${currentGW}/live/`, {
+    const liveRes = await fetch(`${BACKEND_BASE}/api/live/${currentGW}`, {
       credentials: "omit",
     });
     if (!liveRes.ok) {
