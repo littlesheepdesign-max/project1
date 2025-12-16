@@ -1,5 +1,7 @@
 // Your backend base URL on Render
-const BACKEND_BASE = 'https://project1-backend-o71f.onrender.com';
+// const BACKEND_BASE = 'https://project1-backend-o71f.onrender.com';
+// NEW:
+const BACKEND_BASE = 'https://project1-worker.littlesheepdesign.workers.dev';
 
 const ELEMENT_TYPES = {
   1: "GK",
@@ -878,4 +880,5 @@ refreshBtn.addEventListener("click", () => {
       console.error("Error refreshing xA data:", e);
     }
   });
+
 })();
