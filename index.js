@@ -17,8 +17,8 @@ const CLUB_COLORS = {
   Liverpool: "#c8102E",
   "Man Utd": "#DA291C",
   Chelsea: "#60A5FA",
-  Newcastle: "#241F20",
-  Burnley: "#6C1D45",
+  Newcastle: "#FFFFFF",
+  Burnley: "#99D6EA",
   "Nott'm Forest": "#E53233",
   "Aston Villa": "#95bfe5",
   Bournemouth: "#DA291C",
@@ -26,10 +26,10 @@ const CLUB_COLORS = {
   Brighton: "#0057B8",
   "Crystal Palace": "#1B458F",
   Everton: "#003399",
-  Fulham: "#000000",
-  Leeds: "#FFCD00",
+  Fulham: "#FFFFFF",
+  Leeds: "#FFFFFF",
   Sunderland: "#FF0000" ,
-  Spurs: "#132257",
+  Spurs: "#FFFFFF",
   Wolves: "#FDB913",
   "West Ham": "#7A263A"
 };
@@ -896,4 +896,5 @@ refreshBtn.addEventListener("click", () => {
   });
 
 })();
+
 
