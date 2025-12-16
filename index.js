@@ -12,24 +12,24 @@ const ELEMENT_TYPES = {
 
 const CLUB_COLORS = {
   // Example subset – you can expand from FPL "teams" data
-  Arsenal: "#EF0107",
+  Arsenal: "#EF4444",
   "Man City": "#6CABDD",
-  Liverpool: "#c8102E",
-  "Man Utd": "#DA291C",
+  Liverpool: "#F97316",
+  "Man Utd": "#F97316",
   Chelsea: "#60A5FA",
-  Newcastle: "#FFFFFF",
+  Newcastle: "#E5E7EB",
   Burnley: "#99D6EA",
-  "Nott'm Forest": "#E53233",
+  "Nott'm Forest": "#F97316",
   "Aston Villa": "#95bfe5",
   Bournemouth: "#DA291C",
   Brentford: "#D20000",
   Brighton: "#0057B8",
   "Crystal Palace": "#1B458F",
   Everton: "#003399",
-  Fulham: "#FFFFFF",
+  Fulham: "#E5E7EB",
   Leeds: "#FFFFFF",
-  Sunderland: "#FF0000" ,
-  Spurs: "#FFFFFF",
+  Sunderland: "#F97316" ,
+  Spurs: "#E5E7EB",
   Wolves: "#FDB913",
   "West Ham": "#7A263A"
 };
@@ -896,5 +896,6 @@ refreshBtn.addEventListener("click", () => {
   });
 
 })();
+
 
 
