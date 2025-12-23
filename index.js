@@ -565,8 +565,8 @@ function renderTop10ToXgi(top10, teamMap) {
     posTag.textContent = position;
 	
     const smallXgi = document.createElement("span");
-    smallXa.textContent = `${player.gwPoints} xGI`;
-    smallXa.style.opacity = "0.8";
+    smallXgi.textContent = `${player.gwPoints} xGI`;
+    smallXgi.style.opacity = "0.8";
 
     metaDiv.appendChild(clubTag);
     metaDiv.appendChild(posTag);
@@ -1164,6 +1164,7 @@ refreshBtn.addEventListener("click", () => {
   });
 
 })();
+
 
 
 
