@@ -989,7 +989,7 @@ async function fetchTop10xGIForCurrentGW() {
     // 4) Build a map from element id -> stats (total_points this GW)
     const liveMap = new Map();
     for (const item of liveElements) {
-      const gwPoints = item.stats.expected_goal_involments;
+      const gwPoints = item.stats.expected_goal_involvements;
       liveMap.set(item.id, gwPoints);
     }
 
@@ -1164,6 +1164,7 @@ refreshBtn.addEventListener("click", () => {
   });
 
 })();
+
 
 
 
