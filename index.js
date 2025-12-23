@@ -563,7 +563,7 @@ async function fetchTop10ForCurrentGW() {
     });
 
     // 7) Take top 10
-    const top10 = playersWithPoints.slice(0, 10);
+    const top10 = playersWithPoints.slice(0, 20);
     lastTop10 = top10; // store for xG tab
 
     // 8) Map teamId to team name
@@ -672,7 +672,7 @@ async function fetchTop10xGForCurrentGW() {
     });
 
     // 7) Take top 10
-    const top10 = playersWithPoints.slice(0, 10);
+    const top10 = playersWithPoints.slice(0, 20);
     lastTop10 = top10; // store for xG tab
 
     // 8) Map teamId to team name
@@ -783,7 +783,7 @@ async function fetchTop10xAForCurrentGW() {
     });
 
     // 7) Take top 10
-    const top10 = playersWithPoints.slice(0, 10);
+    const top10 = playersWithPoints.slice(0, 20);
     lastTop10 = top10; // store for xG tab
 
     // 8) Map teamId to team name
@@ -896,6 +896,7 @@ refreshBtn.addEventListener("click", () => {
   });
 
 })();
+
 
 
 
