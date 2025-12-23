@@ -45,6 +45,17 @@
         Top 20 – xA
       </button>
 	  
+	  <button
+        class="tab-button"
+        id="tabTop10xGI"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        aria-controls="xgiTabPanel"
+      >
+        Top 20 – xGI
+      </button>
+	  
     </nav>
 
     <!-- TAB PANEL 1: Your existing GW Top 20 view -->
@@ -173,7 +184,7 @@
       <header>
         <h1>Top 20 Players by xA This Gameweek</h1>
         <div class="subtitle">
-         Top 20 Players by xa This Gameweek, using the official FPL API.
+         Top 20 Players by xA This Gameweek, using the official FPL API.
         </div>
         <div class="pill">
           <span class="pill-dot"></span>
@@ -220,13 +231,73 @@
         </div>
       </div>
     </section>
+	
+	
+	<!-- TAB PANEL 4: New Top 20 xGI view -->
+    <section
+      id="xgiTabPanel"
+      class="tab-panel tab-panel-hidden"
+      role="tabpanel"
+      aria-labelledby="tabTop10xGI"
+    >
+      <header>
+        <h1>Top 20 Players by xGI This Gameweek</h1>
+        <div class="subtitle">
+         Top 20 Players by xGI This Gameweek, using the official FPL API.
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Data auto-detected from live Gameweek
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="refreshXgiBtn" class="btn">
+          <span class="btn-icon">🔄</span>
+          Refresh Top 20 xGI
+        </button>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-left">
+          <div class="badge">
+            <span class="badge-dot"></span>
+			<span id="gwxgiText">Detecting current Gameweek…</span>
+          </div>
+          <div id="xgiUpdatedAt" style="font-size: 0.8rem; opacity: 0.85;">
+            Last updated: <span id="xgiUpdatedTime">–</span>
+          </div>
+        </div>
+        <div id="xgiStatusMessage" class="error"></div>
+      </div>
+
+      <div class="card">
+        <div class="list-header">
+          <div>#</div>
+          <div>Photo</div>
+          <div>Player</div>
+          <div>Club</div>
+          <div class="header-cell-right">Position</div>
+          <div class="header-cell-right">GW xGI</div>
+        </div>
+        <div id="xgiPlayersList" class="players-list">
+          <div class="empty-state">
+            <span class="loading" id="xgiLoadingIndicator" style="display: none;">
+              <span class="spinner"></span>
+              Fetching xGI data…
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </div>
 
-	<script src="index.js?v=1.1.0"></script>
+	<script src="index.js?v=1.1.1"></script>
 </body>
 
 </html>
+
 
 
 
